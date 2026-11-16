@@ -5,251 +5,416 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Yatin Ahlawat · Data Analyst</title>
 <meta name="description" content="Yatin Ahlawat — Data Analyst, Business Analyst and BI Analyst. SQL, BigQuery, Power BI and Python for retail, FMCG and e-commerce promotion analytics.">
+<meta name="theme-color" content="#0b0d12" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
+<meta property="og:title" content="Yatin Ahlawat · Data Analyst">
+<meta property="og:description" content="Turning messy retail and promotion data into decisions. SQL · BigQuery · Power BI · Python.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('anim')</script>
 <style>
 :root{
-  --bg:#f7f8fa;--surface:#ffffff;--text:#14171f;--muted:#5b6474;--line:#e3e6ec;
-  --accent:#2f5bea;--accent-soft:#e8eefe;--accent-2:#0f9d7a;
+  --bg:#f4f1ea;--bg-2:#ebe6db;--surface:#fffdf8;--text:#111318;--muted:#5d6270;--line:#d9d3c5;
+  --accent:#ff5a1f;--accent-2:#2549e8;--accent-3:#0e9f78;--glow:rgba(255,90,31,.18);
 }
 @media (prefers-color-scheme:dark){
-  :root{--bg:#0d1017;--surface:#151a24;--text:#e8ebf2;--muted:#98a2b3;--line:#262d3b;
-    --accent:#7d9bff;--accent-soft:#1c2540;--accent-2:#3fd0a8;}
+  :root{--bg:#0b0d12;--bg-2:#11141b;--surface:#151922;--text:#eef0f5;--muted:#9097a6;--line:#252a36;
+    --accent:#ff6a33;--accent-2:#7b93ff;--accent-3:#3fd6a8;--glow:rgba(255,106,51,.22);}
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Inter,system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:16px}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
-.logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;color:var(--text)}
-nav ul{list-style:none;display:flex;gap:22px;font-size:14px}
-nav ul a{color:var(--muted)}
-nav ul a:hover{color:var(--text);text-decoration:none}
-@media (max-width:640px){nav ul{display:none}}
+html{-webkit-text-size-adjust:100%;overflow-x:clip}
+#resume{overflow:hidden}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:16px;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--accent);color:#fff}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+.display{font-family:'Space Grotesk',sans-serif;letter-spacing:-.03em}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
 
-header.hero{padding:88px 0 64px}
-.eyebrow{display:inline-block;font-size:13px;font-weight:600;color:var(--accent);background:var(--accent-soft);padding:5px 12px;border-radius:999px;margin-bottom:20px}
-h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(38px,6vw,60px);line-height:1.08;letter-spacing:-.02em;margin-bottom:12px}
-.role{font-size:clamp(18px,2.4vw,22px);color:var(--muted);font-weight:500;margin-bottom:22px}
-.lede{max-width:680px;font-size:17px;color:var(--text);margin-bottom:30px}
-.cta{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:10px;font-weight:600;font-size:15px;border:1px solid var(--line);color:var(--text);background:var(--surface)}
-.btn:hover{text-decoration:none;border-color:var(--accent)}
-.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
-@media (prefers-color-scheme:dark){.btn.primary{color:#0d1017}}
+/* grain + glow */
+body:before{content:"";position:fixed;inset:-50%;z-index:-1;pointer-events:none;
+  background:radial-gradient(circle at 20% 10%,var(--glow),transparent 35%),radial-gradient(circle at 85% 70%,color-mix(in srgb,var(--accent-2) 14%,transparent),transparent 40%)}
 
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:56px}
-@media (max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
-.stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
-.stat b{display:block;font-family:'Space Grotesk',sans-serif;font-size:30px;line-height:1.1;color:var(--text)}
-.stat span{font-size:13px;color:var(--muted)}
+/* loader */
+#loader{position:fixed;inset:0;z-index:100;background:var(--bg);display:flex;align-items:flex-end;justify-content:space-between;padding:clamp(16px,4vw,40px)}
+#loader .count{font-family:'Space Grotesk',sans-serif;font-size:clamp(64px,16vw,200px);line-height:.8;font-weight:700}
+#loader .lab{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+html:not(.anim) #loader{display:none}
 
-section{padding:64px 0;border-top:1px solid var(--line)}
-h2{font-family:'Space Grotesk',sans-serif;font-size:28px;letter-spacing:-.01em;margin-bottom:8px}
-.sub{color:var(--muted);margin-bottom:32px}
+/* cursor */
+.cursor,.cursor-dot{position:fixed;top:0;left:0;pointer-events:none;z-index:90;border-radius:50%;transform:translate(-50%,-50%);display:none}
+.cursor{width:38px;height:38px;border:1.5px solid var(--accent);transition:width .25s,height .25s,background .25s}
+.cursor.hover{width:70px;height:70px;background:var(--glow)}
+.cursor-dot{width:6px;height:6px;background:var(--accent)}
+@media (pointer:fine){html.anim .cursor,html.anim .cursor-dot{display:block}}
 
-.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-@media (max-width:900px){.projects{grid-template-columns:1fr}}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column}
-.tag{font-size:12px;font-weight:600;color:var(--accent-2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
-.card h3{font-size:19px;line-height:1.3;margin-bottom:10px}
-.card p{color:var(--muted);font-size:15px;margin-bottom:14px}
-.card ul{padding-left:18px;font-size:14.5px;margin-bottom:16px}
-.card li{margin-bottom:6px}
-.metric{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:14px;border-top:1px dashed var(--line)}
-.metric div{font-size:13px;color:var(--muted)}
-.metric strong{display:block;font-size:20px;color:var(--text);font-family:'Space Grotesk',sans-serif}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
-.chip{font-size:12px;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:500}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:18px 0;transition:background .3s,backdrop-filter .3s}
+nav.scrolled{background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;display:flex;align-items:center;gap:8px}
+.brand i{width:10px;height:10px;border-radius:50%;background:var(--accent);display:inline-block;box-shadow:0 0 0 4px var(--glow)}
+nav ul{list-style:none;display:flex;gap:26px;font-size:14px;color:var(--muted)}
+nav ul a:hover{color:var(--text)}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;font-weight:600;font-size:14px;border:1px solid var(--line);background:var(--surface);transition:transform .2s,border-color .2s,background .2s}
+.pill:hover{border-color:var(--accent);transform:translateY(-2px)}
+.pill.solid{background:var(--accent);border-color:var(--accent);color:#fff}
+.pill svg{width:16px;height:16px}
+@media (max-width:820px){nav ul{display:none}}
 
-.timeline{position:relative;padding-left:26px}
-.timeline:before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--line)}
-.job{position:relative;margin-bottom:36px}
-.job:before{content:"";position:absolute;left:-26px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--surface);border:3px solid var(--accent)}
-.job-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;margin-bottom:6px}
-.job h3{font-size:18px}
-.job .co{color:var(--muted);font-weight:500}
-.job .when{font-size:14px;color:var(--muted);white-space:nowrap}
-.job ul{padding-left:18px;color:var(--text);font-size:15px}
-.job li{margin-bottom:6px}
+/* hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:120px clamp(16px,4vw,40px) 40px;position:relative}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(56px,13.5vw,200px);line-height:.86;letter-spacing:-.05em;text-transform:uppercase}
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.04em}
+.hero h1 .line span{display:inline-block}
+.hero h1 .outline{color:transparent;-webkit-text-stroke:1.5px var(--text)}
+.hero-row{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:end;margin-top:36px}
+.hero p.lede{font-size:clamp(17px,1.6vw,20px);max-width:560px;color:var(--muted)}
+.hero p.lede b{color:var(--text);font-weight:600}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
+.roles{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.roles span{font-family:'JetBrains Mono',monospace;font-size:12px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+.scroll-hint{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-hint i{width:1px;height:42px;background:linear-gradient(var(--accent),transparent);display:block;animation:drip 1.8s infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media (max-width:820px){.hero h1{font-size:19vw}.hero-row{grid-template-columns:1fr}.hero .ctas{justify-content:flex-start}.scroll-hint{display:none}}
 
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
-.skillbox{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
-.skillbox h4{font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:12px}
+/* marquee */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:18px 0;background:var(--bg-2)}
+.marquee .track{display:flex;gap:48px;width:max-content;animation:mq 38s linear infinite}
+.marquee.rev .track{animation-direction:reverse}
+.marquee span{font-family:'Space Grotesk',sans-serif;font-size:clamp(22px,3.2vw,40px);font-weight:500;white-space:nowrap;display:flex;align-items:center;gap:48px}
+.marquee span:after{content:"✦";color:var(--accent);font-size:.6em}
+@keyframes mq{to{transform:translateX(-50%)}}
 
-.edu{display:flex;flex-wrap:wrap;gap:16px}
-.edu .skillbox{flex:1 1 300px}
-.edu p{color:var(--muted);font-size:15px}
+section{padding:clamp(80px,12vw,160px) 0;position:relative}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:clamp(40px,6vw,80px);flex-wrap:wrap}
+.sec-head h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(40px,7vw,96px);line-height:.92;letter-spacing:-.04em;font-weight:700}
+.sec-head p{max-width:400px;color:var(--muted)}
 
-.contact{text-align:center}
-.contact .cta{justify-content:center;margin-top:20px}
-footer{padding:28px 0;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.stat{padding:clamp(20px,3vw,36px);border-right:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.stat b{display:block;font-family:'Space Grotesk',sans-serif;font-size:clamp(38px,5.5vw,72px);line-height:1;font-weight:700;letter-spacing:-.03em}
+.stat b em{font-style:normal;color:var(--accent)}
+.stat span{display:block;margin-top:10px;color:var(--muted);font-size:14px}
+@media (max-width:820px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* journey */
+.journey{position:relative}
+.j-svg{position:absolute;left:50%;top:0;height:100%;width:120px;transform:translateX(-50%);overflow:visible;pointer-events:none}
+.j-svg path{fill:none;stroke-width:3;stroke-linecap:round}
+.j-svg .bgp{stroke:var(--line)}
+.j-svg .fgp{stroke:var(--accent)}
+.j-item{display:grid;grid-template-columns:1fr 120px 1fr;align-items:center;margin-bottom:clamp(60px,9vw,120px);position:relative}
+.j-item:last-child{margin-bottom:0}
+.j-node{grid-column:2;justify-self:center;width:22px;height:22px;border-radius:50%;background:var(--bg);border:3px solid var(--accent);position:relative;z-index:2;box-shadow:0 0 0 8px var(--glow)}
+.j-year{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(48px,8vw,120px);line-height:.85;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.5px var(--muted)}
+.j-card{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:clamp(22px,3vw,34px);position:relative}
+.j-card .meta{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.j-card h3{font-family:'Space Grotesk',sans-serif;font-size:clamp(22px,2.4vw,30px);line-height:1.15;letter-spacing:-.02em;margin-bottom:4px}
+.j-card .org{color:var(--muted);font-weight:500;margin-bottom:14px}
+.j-card ul{padding-left:18px;font-size:15px;color:var(--text)}
+.j-card li{margin-bottom:6px}
+.j-card li::marker{color:var(--accent)}
+.j-item.l .j-card{grid-column:1;grid-row:1}
+.j-item.l .j-year{grid-column:3;grid-row:1;padding-left:20px}
+.j-item.r .j-card{grid-column:3;grid-row:1}
+.j-item.r .j-year{grid-column:1;grid-row:1;text-align:right;padding-right:20px}
+.j-item.now .j-node{background:var(--accent);animation:pulse 1.8s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 var(--glow)}70%{box-shadow:0 0 0 22px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.j-item.now .j-year{color:var(--accent);-webkit-text-stroke:0}
+@media (max-width:820px){
+  .j-svg{left:11px;transform:none;width:22px}
+  .j-item,.j-item.l,.j-item.r{grid-template-columns:22px 1fr;column-gap:20px;row-gap:10px}
+  .j-node{grid-column:1;grid-row:1;align-self:start;margin-top:8px}
+  .j-item.l .j-year,.j-item.r .j-year{grid-column:2;grid-row:1;text-align:left;padding:0}
+  .j-item.l .j-card,.j-item.r .j-card{grid-column:2;grid-row:2}
+}
+
+/* projects – horizontal */
+.h-outer{overflow:hidden}
+.h-track{display:flex;gap:clamp(16px,2.5vw,28px);padding:0 clamp(16px,4vw,40px);width:max-content}
+.p-card{width:min(78vw,520px);flex-shrink:0;background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:clamp(22px,3vw,36px);display:flex;flex-direction:column;min-height:560px;position:relative;overflow:hidden}
+.p-card .num{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--muted)}
+.p-card .tag{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent-3);letter-spacing:.06em;text-transform:uppercase;margin:18px 0 8px}
+.p-card h3{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,3vw,40px);line-height:1.02;letter-spacing:-.03em;margin-bottom:12px}
+.p-card p{color:var(--muted);font-size:15px;margin-bottom:16px}
+.p-card ul{padding-left:18px;font-size:14.5px;margin-bottom:20px}
+.p-card li{margin-bottom:6px}
+.p-card li::marker{color:var(--accent)}
+.viz{margin-top:auto;padding-top:18px;border-top:1px dashed var(--line)}
+.viz .row{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:8px}
+.viz .row b{color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:22px}
+.bars{display:flex;align-items:flex-end;gap:6px;height:90px}
+.bars i{flex:1;background:linear-gradient(to top,var(--accent),color-mix(in srgb,var(--accent) 40%,transparent));border-radius:6px 6px 2px 2px;transform-origin:bottom}
+.bars i.dim{background:var(--line)}
+.meter{height:12px;border-radius:99px;background:var(--line);overflow:hidden;margin:6px 0 14px}
+.meter i{display:block;height:100%;background:var(--accent-2);border-radius:99px;transform-origin:left}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.chip{font-family:'JetBrains Mono',monospace;font-size:11.5px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.p-end{width:min(60vw,360px);flex-shrink:0;display:flex;flex-direction:column;justify-content:center;gap:16px}
+.p-end h3{font-family:'Space Grotesk',sans-serif;font-size:clamp(30px,3.4vw,46px);line-height:1;letter-spacing:-.03em}
+@media (max-width:820px){
+  .h-track{flex-direction:column;width:auto}
+  .p-card{width:100%;min-height:0}
+  .p-end{width:100%}
+}
+
+/* skills */
+.sk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.sk{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px;transition:transform .3s,border-color .3s}
+.sk:hover{transform:translateY(-4px);border-color:var(--accent)}
+.sk h4{font-family:'Space Grotesk',sans-serif;font-size:20px;margin-bottom:14px;display:flex;justify-content:space-between}
+.sk h4 small{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);font-weight:400}
+.domains{margin-top:28px;color:var(--muted);font-size:15px}
+.domains b{color:var(--text)}
+
+/* resume */
+.resume{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,60px);align-items:center}
+.paper{aspect-ratio:1/1.3;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:clamp(20px,3vw,34px);box-shadow:0 30px 60px -30px rgba(0,0,0,.35);transform:rotate(-3deg);position:relative;overflow:hidden}
+.paper:after{content:"";position:absolute;inset:auto 0 0 0;height:40%;background:linear-gradient(transparent,var(--surface))}
+.paper h5{font-family:'Space Grotesk',sans-serif;font-size:22px;letter-spacing:.02em}
+.paper .sub{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent);margin:4px 0 18px;letter-spacing:.1em}
+.paper .ln{height:8px;border-radius:4px;background:var(--line);margin-bottom:10px}
+.paper .ln.h{height:10px;width:40%;background:color-mix(in srgb,var(--accent) 55%,var(--line));margin-top:18px}
+.resume .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+@media (max-width:820px){.resume{grid-template-columns:1fr}.paper{max-width:340px;margin:0 auto}}
+
+/* contact */
+.contact{text-align:center;padding-bottom:60px}
+.contact h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(52px,12vw,180px);line-height:.88;letter-spacing:-.05em}
+.contact h2 a{color:var(--accent);display:inline-block}
+.c-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:clamp(40px,6vw,70px);text-align:left}
+.c-item{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:6px;transition:border-color .2s,transform .2s;cursor:pointer;font:inherit;color:inherit;width:100%;text-align:left}
+.c-item:hover{border-color:var(--accent);transform:translateY(-3px)}
+.c-item small{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+.c-item span{font-weight:600;word-break:break-word}
+.phone-actions{display:none;gap:8px;margin-top:6px;flex-wrap:wrap}
+.phone-actions a{font-size:13px;padding:6px 12px;border-radius:99px;background:var(--accent);color:#fff;font-weight:600}
+.phone-actions a.alt{background:transparent;border:1px solid var(--line);color:var(--text)}
+@media (max-width:900px){.c-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.c-grid{grid-template-columns:1fr}}
+footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (prefers-reduced-motion:reduce){.marquee .track,.scroll-hint i,.j-item.now .j-node{animation:none}}
 </style>
 </head>
 <body>
 
-<nav>
+<div id="loader" aria-hidden="true"><div><div class="lab">Loading data</div><div class="count" id="lcount">0</div></div><div class="lab">Yatin Ahlawat · Portfolio</div></div>
+<div class="cursor" aria-hidden="true"></div><div class="cursor-dot" aria-hidden="true"></div>
+
+<nav id="nav">
   <div class="wrap">
-    <a class="logo" href="#top">Yatin Ahlawat</a>
+    <a class="brand" href="#top" data-link><i></i>Yatin</a>
     <ul>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#journey" data-link>Journey</a></li>
+      <li><a href="#work" data-link>Work</a></li>
+      <li><a href="#skills" data-link>Skills</a></li>
+      <li><a href="#resume" data-link>Résumé</a></li>
+      <li><a href="#contact" data-link>Contact</a></li>
     </ul>
+    <a class="pill solid" href="Yatin_Ahlawat_Resume.pdf" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>Résumé</a>
   </div>
 </nav>
 
-<header class="hero" id="top">
-  <div class="wrap">
-    <span class="eyebrow">New Delhi, India · Open to Data Analyst roles</span>
-    <h1>Yatin Ahlawat</h1>
-    <p class="role">Data Analyst · Business Analyst · BI Analyst</p>
-    <p class="lede">Data Analyst with 3+ years of experience across retail, e-commerce promotions, EPOS and technical audit. I turn messy retail and promotion data into KPIs, Power BI reporting and evidence for pricing, promotion and campaign decisions, using SQL, BigQuery, Power BI, Python/Pandas and Excel.</p>
-    <div class="cta">
-      <a class="btn primary" href="mailto:Yatinahlawat@gmail.com">Email me</a>
-      <a class="btn" href="https://www.linkedin.com/in/yatin-ahlawat-risk007" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn" href="#projects">See projects</a>
-    </div>
-
-    <div class="stats">
-      <div class="stat"><b>15+</b><span>manufacturers analysed</span></div>
-      <div class="stat"><b>13,400+</b><span>promotion spots modelled</span></div>
-      <div class="stat"><b>4.4M</b><span>booked impressions analysed</span></div>
-      <div class="stat"><b>200K+</b><span>audit records reconciled</span></div>
+<header class="hero wrap" id="top">
+  <div class="roles hero-fade"><span>Data Analyst</span><span>Business Analyst</span><span>BI Analyst</span><span>New Delhi, India</span></div>
+  <h1 aria-label="Yatin Ahlawat">
+    <span class="line"><span>Yatin</span></span>
+    <span class="line"><span class="outline">Ahlawat</span></span>
+  </h1>
+  <div class="hero-row">
+    <p class="lede hero-fade">I turn messy retail and promotion data into <b>decisions</b>. 3+ years across retail, e-commerce promotions, EPOS and technical audit, working in <b>SQL, BigQuery, Power BI and Python</b>.</p>
+    <div class="ctas hero-fade">
+      <a class="pill" href="#journey" data-link>See my journey ↓</a>
+      <a class="pill solid" href="#contact" data-link>Get in touch</a>
     </div>
   </div>
+  <div class="scroll-hint">SCROLL<i></i></div>
 </header>
 
-<section id="projects">
+<div class="marquee"><div class="track">
+  <span>SQL</span><span>BigQuery</span><span>Power BI</span><span>DAX</span><span>Python</span><span>Pandas</span><span>Power Query</span><span>Star Schema</span><span>KPI Design</span><span>Excel</span>
+  <span>SQL</span><span>BigQuery</span><span>Power BI</span><span>DAX</span><span>Python</span><span>Pandas</span><span>Power Query</span><span>Star Schema</span><span>KPI Design</span><span>Excel</span>
+</div></div>
+
+<section id="impact">
   <div class="wrap">
-    <h2>Featured projects</h2>
-    <p class="sub">Retail and promotion intelligence work for GCC markets at ClicFlyer.</p>
-    <div class="projects">
-
-      <article class="card">
-        <div class="tag">EPOS · Promotion analytics</div>
-        <h3>EPOS &amp; Promotion Intelligence</h3>
-        <p>For a global confectionery manufacturer: combined sell-out (EPOS) and flyer-promotion data to show what promotions actually did for share.</p>
-        <ul>
-          <li>Integrated data across 15+ manufacturers and multiple retailers; modelled an 18-month fact table in a star schema.</li>
-          <li>Built a 3-page Power BI solution: Value Share, Spot Count, Share of Flyer, Depth of Promotion and monthly trends.</li>
-          <li>Flagged brands running 35–44% discount depth without matching share gains, as evidence for promotion and negotiation decisions.</li>
-        </ul>
-        <div class="metric">
-          <div><strong>40% → 46%</strong>value share observed</div>
-          <div><strong>+26%</strong>YoY promo spots</div>
-        </div>
-        <div class="chips"><span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">BigQuery</span><span class="chip">Star schema</span></div>
-      </article>
-
-      <article class="card">
-        <div class="tag">Pricing · Saudi Arabia</div>
-        <h3>Competitive Price Optimizer</h3>
-        <p>Replaced manual pre-flyer price checks with a repeatable competitor-price and planned-price simulation workflow.</p>
-        <ul>
-          <li>Consolidated ~2,200 retailer offer records across 6 competing brands.</li>
-          <li>Standardised pack sizes, brand and retailer attributes in BigQuery so prices could be compared like for like.</li>
-          <li>Built views for price index, historical offers and competitor price thresholds.</li>
-        </ul>
-        <div class="metric">
-          <div><strong>~2,200</strong>offer records</div>
-          <div><strong>6</strong>competing brands</div>
-        </div>
-        <div class="chips"><span class="chip">BigQuery</span><span class="chip">SQL</span><span class="chip">Price index</span><span class="chip">Simulation</span></div>
-      </article>
-
-      <article class="card">
-        <div class="tag">Retail media · Attribution</div>
-        <h3>Retail Media Campaign Analytics</h3>
-        <p>For Spike Media: one reporting suite for banner, click, notification and flyer-engagement data.</p>
-        <ul>
-          <li>Built a 5-report Power BI suite covering campaign delivery, pacing, CTR and attribution.</li>
-          <li>Benchmarked 16 advertisers and 4.4M booked impressions; notification campaigns delivered ~9–10% CTR.</li>
-          <li>Linked 2,423 offer clicks to 258,715 banner impressions (~0.94% click rate) to measure attribution beyond reach.</li>
-        </ul>
-        <div class="metric">
-          <div><strong>16</strong>advertisers</div>
-          <div><strong>~9–10%</strong>notification CTR</div>
-        </div>
-        <div class="chips"><span class="chip">Power BI</span><span class="chip">Power Query</span><span class="chip">Attribution</span><span class="chip">KPIs</span></div>
-      </article>
-
+    <div class="sec-head">
+      <div><div class="kicker">01 — Impact in numbers</div><h2 class="reveal">The data<br>I've worked on</h2></div>
+      <p class="reveal">A snapshot of the scale of datasets and analyses behind my work.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b><span class="cnt" data-to="15">15</span><em>+</em></b><span>manufacturers analysed</span></div>
+      <div class="stat"><b><span class="cnt" data-to="13400" data-fmt="k">13,400</span><em>+</em></b><span>promotion spots modelled</span></div>
+      <div class="stat"><b><span class="cnt" data-to="4.4" data-dec="1">4.4</span><em>M</em></b><span>booked impressions analysed</span></div>
+      <div class="stat"><b><span class="cnt" data-to="200">200</span><em>K+</em></b><span>audit records reconciled</span></div>
     </div>
   </div>
 </section>
 
-<section id="experience">
+<section id="journey">
   <div class="wrap">
-    <h2>Experience</h2>
-    <p class="sub">Retail &amp; e-commerce analytics, technical audit and data quality.</p>
-    <div class="timeline">
+    <div class="sec-head">
+      <div><div class="kicker">02 — The journey</div><h2 class="reveal">From circuits<br>to dashboards</h2></div>
+      <p class="reveal">Scroll to follow the line from engineering student to retail data analyst.</p>
+    </div>
+    <div class="journey" id="jwrap">
+      <svg class="j-svg" id="jsvg" preserveAspectRatio="none" aria-hidden="true"><path class="bgp" id="jbg"/><path class="fgp" id="jfg"/></svg>
 
-      <div class="job">
-        <div class="job-head">
-          <h3>Data Analyst 2 <span class="co">· ClicFlyer (Bodmas Technology Pvt Ltd)</span></h3>
-          <span class="when">Jul 2025 – Present · India</span>
-        </div>
-        <ul>
-          <li>Analyse FMCG and retail promotional and EPOS data across GCC markets to support pricing, promotion, market-share and campaign-performance decisions.</li>
-          <li>Turn requirements from category, trade marketing, media and product teams into KPI definitions, analytical datasets and Power BI reporting.</li>
-          <li>Standardise and transform retail datasets in BigQuery, resolving duplicate records, product-hierarchy mismatches and inconsistent brand and retailer attributes.</li>
-        </ul>
+      <div class="j-item l">
+        <div class="j-card"><div class="meta">Aug 2018 – May 2022 · Education</div>
+          <h3>B.Tech, Electrical Engineering</h3><div class="org">Delhi Technological University, New Delhi</div>
+          <ul><li>Built an engineering foundation in systems, signals and problem solving, and started working with data.</li></ul></div>
+        <div class="j-node"></div><div class="j-year">2018</div>
       </div>
 
-      <div class="job">
-        <div class="job-head">
-          <h3>Associate Consultant, Technical Audit <span class="co">· Ernst &amp; Young LLP</span></h3>
-          <span class="when">Jul 2022 – Nov 2024 · India</span>
-        </div>
-        <ul>
-          <li>Analysed 200,000+ process and transaction records with SQL and Excel reconciliation checks to detect control exceptions and recurring anomalies, contributing to remediation of 15 data-integrity issues.</li>
-          <li>Used Python/Pandas to clean, transform and validate audit datasets and automate repeatable exception checks.</li>
-          <li>Built Power BI views consolidating control findings, exception trends and remediation status for stakeholders.</li>
-          <li>Partnered with Business, Finance and IT teams to turn control gaps into measurable indicators and corrective actions.</li>
-        </ul>
+      <div class="j-item r">
+        <div class="j-year">2018</div><div class="j-node"></div>
+        <div class="j-card"><div class="meta">Dec 2018 – Jan 2019 · Internship</div>
+          <h3>Data Analyst Intern</h3><div class="org">Awign Pvt Ltd</div>
+          <ul><li>Supported onboarding of 90–100 restaurants for Zomato by resolving integration and data-quality issues before go-live.</li>
+          <li>Cleaned and validated restaurant master data, identifying duplicate and inconsistent records.</li></ul></div>
       </div>
 
-      <div class="job">
-        <div class="job-head">
-          <h3>Data Analyst Intern <span class="co">· Awign Pvt Ltd</span></h3>
-          <span class="when">Dec 2018 – Jan 2019 · India</span>
-        </div>
-        <ul>
-          <li>Supported onboarding of 90–100 restaurants for Zomato by resolving integration and data-quality issues before go-live.</li>
-          <li>Cleaned and validated restaurant master data, identifying duplicate and inconsistent records.</li>
-        </ul>
+      <div class="j-item l">
+        <div class="j-card"><div class="meta">Jul 2022 – Nov 2024 · India</div>
+          <h3>Associate Consultant, Technical Audit</h3><div class="org">Ernst &amp; Young LLP</div>
+          <ul><li>Analysed 200,000+ process and transaction records with SQL and Excel reconciliation checks, contributing to remediation of 15 data-integrity issues.</li>
+          <li>Used Python/Pandas to clean, validate and automate repeatable exception checks.</li>
+          <li>Built Power BI views of control findings, exception trends and remediation status.</li>
+          <li>Partnered with Business, Finance and IT to turn control gaps into measurable indicators.</li></ul></div>
+        <div class="j-node"></div><div class="j-year">2022</div>
       </div>
 
+      <div class="j-item r now">
+        <div class="j-year">Now</div><div class="j-node"></div>
+        <div class="j-card"><div class="meta">Jul 2025 – Present · GCC markets</div>
+          <h3>Data Analyst 2</h3><div class="org">ClicFlyer (Bodmas Technology Pvt Ltd)</div>
+          <ul><li>Analyse FMCG and retail promotional and EPOS data to support pricing, promotion, market-share and campaign decisions.</li>
+          <li>Turn requirements from category, trade marketing, media and product teams into KPI definitions, datasets and Power BI reporting.</li>
+          <li>Standardise retail datasets in BigQuery, resolving duplicates, product-hierarchy mismatches and inconsistent attributes.</li></ul></div>
+      </div>
     </div>
   </div>
 </section>
+
+<section id="work" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="kicker">03 — Selected work</div><h2 class="reveal">Projects that<br>moved decisions</h2></div>
+      <p class="reveal">Retail and promotion intelligence for GCC markets at ClicFlyer.</p>
+    </div>
+  </div>
+</section>
+<div class="h-outer" id="hwrap">
+  <div class="h-track" id="htrack">
+
+    <article class="p-card">
+      <div class="num">01 / 03</div>
+      <div class="tag">EPOS · Promotion analytics</div>
+      <h3>EPOS &amp; Promotion Intelligence</h3>
+      <p>For a global confectionery manufacturer: combined sell-out and flyer-promotion data to show what promotions actually did for share.</p>
+      <ul>
+        <li>Integrated data across 15+ manufacturers and multiple retailers into an 18-month star-schema fact table.</li>
+        <li>3-page Power BI solution: Value Share, Spot Count, Share of Flyer, Depth of Promotion, monthly trends (~13,400 spots).</li>
+        <li>Flagged brands running 35–44% discount depth without matching share gains.</li>
+      </ul>
+      <div class="viz">
+        <div class="row"><span>Value share observed</span><b>40% → 46%</b></div>
+        <div class="bars"><i style="height:58%"></i><i style="height:60%"></i><i style="height:62%"></i><i style="height:64%"></i><i style="height:67%"></i><i style="height:70%"></i><i style="height:73%"></i><i style="height:76%"></i></div>
+        <div class="chips"><span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">BigQuery</span><span class="chip">Star schema</span><span class="chip">+26% YoY spots</span></div>
+      </div>
+    </article>
+
+    <article class="p-card">
+      <div class="num">02 / 03</div>
+      <div class="tag">Pricing · Saudi Arabia</div>
+      <h3>Competitive Price Optimizer</h3>
+      <p>Replaced manual pre-flyer price checks with a repeatable competitor-price and planned-price simulation workflow.</p>
+      <ul>
+        <li>Consolidated ~2,200 retailer offer records across 6 competing brands.</li>
+        <li>Standardised pack sizes, brand and retailer attributes in BigQuery for like-for-like comparison.</li>
+        <li>Views for price index, historical offers and competitor price thresholds.</li>
+      </ul>
+      <div class="viz">
+        <div class="row"><span>Offer records consolidated</span><b>~2,200</b></div>
+        <div class="bars"><i style="height:82%"></i><i class="dim" style="height:64%"></i><i style="height:91%"></i><i class="dim" style="height:55%"></i><i style="height:76%"></i><i class="dim" style="height:70%"></i></div>
+        <div class="chips"><span class="chip">BigQuery</span><span class="chip">SQL</span><span class="chip">Price index</span><span class="chip">6 brands</span></div>
+      </div>
+    </article>
+
+    <article class="p-card">
+      <div class="num">03 / 03</div>
+      <div class="tag">Retail media · Attribution</div>
+      <h3>Retail Media Campaign Analytics</h3>
+      <p>For Spike Media: one reporting suite for banner, click, notification and flyer-engagement data.</p>
+      <ul>
+        <li>5-report Power BI suite for campaign delivery, pacing, CTR and attribution.</li>
+        <li>Benchmarked 16 advertisers and 4.4M booked impressions.</li>
+        <li>Linked 2,423 offer clicks to 258,715 banner impressions (~0.94% click rate).</li>
+      </ul>
+      <div class="viz">
+        <div class="row"><span>Notification CTR</span><b>~9–10%</b></div>
+        <div class="meter"><i style="width:95%"></i></div>
+        <div class="row"><span>Banner click rate</span><b>~0.94%</b></div>
+        <div class="meter"><i style="width:9.4%"></i></div>
+        <div class="chips"><span class="chip">Power BI</span><span class="chip">Power Query</span><span class="chip">Attribution</span><span class="chip">16 advertisers</span></div>
+      </div>
+    </article>
+
+    <div class="p-end">
+      <div class="kicker">Want the full story?</div>
+      <h3>Every project is in my résumé.</h3>
+      <div><a class="pill solid" href="#resume" data-link>View résumé →</a></div>
+    </div>
+  </div>
+</div>
 
 <section id="skills">
   <div class="wrap">
-    <h2>Skills</h2>
-    <p class="sub">Domains: FMCG, Retail, E-commerce Promotions, EPOS / Sell-Out Analytics, Retail Media, Risk &amp; Compliance · Markets: GCC (Saudi Arabia, UAE)</p>
-    <div class="skills">
-      <div class="skillbox"><h4>Analytics</h4><div class="chips"><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Excel</span><span class="chip">KPI Analysis</span><span class="chip">Root Cause Analysis</span><span class="chip">Trend Analysis</span><span class="chip">A/B Testing</span><span class="chip">Data Validation</span></div></div>
-      <div class="skillbox"><h4>BI &amp; Visualization</h4><div class="chips"><span class="chip">Power BI</span><span class="chip">Power BI Service</span><span class="chip">DAX</span><span class="chip">Power Query</span><span class="chip">M</span><span class="chip">Power Pivot</span><span class="chip">Dashboards</span><span class="chip">Data Visualization</span></div></div>
-      <div class="skillbox"><h4>Data</h4><div class="chips"><span class="chip">Google BigQuery</span><span class="chip">SQL Server</span><span class="chip">Data Cleaning</span><span class="chip">Data Transformation</span><span class="chip">ETL</span><span class="chip">Data Modeling</span><span class="chip">Star Schema</span></div></div>
-      <div class="skillbox"><h4>Business Analysis</h4><div class="chips"><span class="chip">Requirements Gathering</span><span class="chip">KPI Definition</span><span class="chip">Stakeholder Management</span><span class="chip">Process Analysis</span><span class="chip">Business Insights</span><span class="chip">Decision Support</span></div></div>
-      <div class="skillbox"><h4>Tools</h4><div class="chips"><span class="chip">Jupyter Notebook</span><span class="chip">VS Code</span><span class="chip">Git</span></div></div>
+    <div class="sec-head">
+      <div><div class="kicker">04 — Toolkit</div><h2 class="reveal">What I<br>work with</h2></div>
     </div>
+    <div class="sk-grid">
+      <div class="sk"><h4>Analytics <small>01</small></h4><div class="chips"><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Excel</span><span class="chip">KPI Analysis</span><span class="chip">Root Cause Analysis</span><span class="chip">Trend Analysis</span><span class="chip">A/B Testing</span><span class="chip">Data Validation</span></div></div>
+      <div class="sk"><h4>BI &amp; Visualization <small>02</small></h4><div class="chips"><span class="chip">Power BI</span><span class="chip">Power BI Service</span><span class="chip">DAX</span><span class="chip">Power Query</span><span class="chip">M</span><span class="chip">Power Pivot</span><span class="chip">Dashboards</span><span class="chip">Data Visualization</span></div></div>
+      <div class="sk"><h4>Data <small>03</small></h4><div class="chips"><span class="chip">Google BigQuery</span><span class="chip">SQL Server</span><span class="chip">Data Cleaning</span><span class="chip">Transformation</span><span class="chip">ETL</span><span class="chip">Data Modeling</span><span class="chip">Star Schema</span></div></div>
+      <div class="sk"><h4>Business Analysis <small>04</small></h4><div class="chips"><span class="chip">Requirements Gathering</span><span class="chip">KPI Definition</span><span class="chip">Stakeholder Mgmt</span><span class="chip">Process Analysis</span><span class="chip">Business Insights</span><span class="chip">Decision Support</span></div></div>
+      <div class="sk"><h4>Tools <small>05</small></h4><div class="chips"><span class="chip">Jupyter Notebook</span><span class="chip">VS Code</span><span class="chip">Git</span></div></div>
+    </div>
+    <p class="domains"><b>Domains:</b> FMCG · Retail · E-commerce Promotions · EPOS / Sell-Out Analytics · Retail Media · Risk &amp; Compliance &nbsp;|&nbsp; <b>Markets:</b> GCC (Saudi Arabia, UAE)</p>
   </div>
 </section>
 
-<section id="education">
-  <div class="wrap">
-    <h2>Education</h2>
-    <div class="edu" style="margin-top:20px">
-      <div class="skillbox">
-        <h3 style="font-size:18px;margin-bottom:4px">B.Tech, Electrical Engineering</h3>
-        <p>Delhi Technological University, New Delhi · Aug 2018 – May 2022</p>
+<div class="marquee rev"><div class="track">
+  <span>Retail</span><span>FMCG</span><span>EPOS</span><span>Promotions</span><span>Retail Media</span><span>Pricing</span><span>Risk &amp; Compliance</span><span>GCC Markets</span>
+  <span>Retail</span><span>FMCG</span><span>EPOS</span><span>Promotions</span><span>Retail Media</span><span>Pricing</span><span>Risk &amp; Compliance</span><span>GCC Markets</span>
+</div></div>
+
+<section id="resume">
+  <div class="wrap resume">
+    <div class="paper" id="paper" aria-hidden="true">
+      <h5>YATIN AHLAWAT</h5><div class="sub">DATA ANALYST | BUSINESS ANALYST | BI ANALYST</div>
+      <div class="ln h"></div><div class="ln"></div><div class="ln" style="width:92%"></div><div class="ln" style="width:80%"></div>
+      <div class="ln h"></div><div class="ln"></div><div class="ln" style="width:86%"></div>
+      <div class="ln h"></div><div class="ln"></div><div class="ln" style="width:95%"></div><div class="ln" style="width:70%"></div><div class="ln"></div><div class="ln" style="width:88%"></div>
+    </div>
+    <div>
+      <div class="kicker">05 — Résumé</div>
+      <h2 class="display reveal" style="font-size:clamp(40px,6vw,80px);line-height:.95;font-weight:700;margin:10px 0 18px">The one-page version.</h2>
+      <p style="color:var(--muted);max-width:460px">Experience, projects, skills and education in an ATS-friendly PDF.</p>
+      <div class="btns">
+        <a class="pill solid" href="Yatin_Ahlawat_Resume.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>Download PDF</a>
+        <a class="pill" href="Yatin_Ahlawat_Resume.pdf" target="_blank" rel="noopener">View in browser ↗</a>
       </div>
     </div>
   </div>
@@ -257,16 +422,163 @@ footer{padding:28px 0;text-align:center;color:var(--muted);font-size:13px;border
 
 <section id="contact" class="contact">
   <div class="wrap">
-    <h2>Let's talk</h2>
-    <p class="sub" style="margin-bottom:0">Looking for Data Analyst, BI Analyst or Analytics roles in Delhi NCR.</p>
-    <div class="cta">
-      <a class="btn primary" href="mailto:Yatinahlawat@gmail.com">Yatinahlawat@gmail.com</a>
-      <a class="btn" href="https://www.linkedin.com/in/yatin-ahlawat-risk007" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn" href="https://github.com/yatinahlawat" target="_blank" rel="noopener">GitHub</a>
+    <div class="kicker">06 — Contact</div>
+    <h2 class="reveal" style="margin-top:14px">Let's make<br>data <a href="mailto:Yatinahlawat@gmail.com">talk.</a></h2>
+    <p style="color:var(--muted);margin-top:18px">Open to Data Analyst, BI Analyst and Analytics roles in Delhi NCR.</p>
+    <div class="c-grid">
+      <a class="c-item" href="mailto:Yatinahlawat@gmail.com"><small>Email</small><span>Yatinahlawat@gmail.com</span></a>
+      <button class="c-item" id="phoneBtn" type="button" aria-live="polite"><small>Phone</small><span id="phoneTxt">Click to reveal</span>
+        <div class="phone-actions" id="phoneAct"><a id="callA" href="#">Call</a><a id="waA" class="alt" href="#" target="_blank" rel="noopener">WhatsApp</a></div></button>
+      <a class="c-item" href="https://www.linkedin.com/in/yatin-ahlawat-risk007" target="_blank" rel="noopener"><small>LinkedIn</small><span>yatin-ahlawat-risk007 ↗</span></a>
+      <a class="c-item" href="https://github.com/yatinahlawat" target="_blank" rel="noopener"><small>GitHub</small><span>yatinahlawat ↗</span></a>
     </div>
   </div>
 </section>
 
-<footer>© 2026 Yatin Ahlawat</footer>
+<footer><div class="wrap"><span>© 2026 Yatin Ahlawat</span><span class="mono">Built with HTML · GSAP · Lenis · hosted on GitHub Pages</span></div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function(){
+  /* phone: assembled on click so it isn't in the page source as one string */
+  var pb=document.getElementById('phoneBtn');
+  pb.addEventListener('click',function(e){
+    if(e.target.closest('a'))return;
+    var p=['+91','85128','83081'];
+    document.getElementById('phoneTxt').textContent=p[0]+' '+p[1]+' '+p[2];
+    document.getElementById('callA').href='tel:'+p.join('');
+    document.getElementById('waA').href='https://wa.me/'+(p.join('').replace('+',''));
+    document.getElementById('phoneAct').style.display='flex';
+  });
+
+  /* nav state */
+  var nav=document.getElementById('nav');
+  function onScroll(){nav.classList.toggle('scrolled',window.scrollY>30)}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  /* journey path geometry (works without GSAP too) */
+  var jwrap=document.getElementById('jwrap'),svg=document.getElementById('jsvg'),bg=document.getElementById('jbg'),fg=document.getElementById('jfg');
+  function buildPath(){
+    var r=jwrap.getBoundingClientRect(),nodes=jwrap.querySelectorAll('.j-node');
+    var sr=svg.getBoundingClientRect(),w=sr.width,mobile=w<60;
+    svg.setAttribute('viewBox','0 0 '+w+' '+r.height);
+    var pts=[].map.call(nodes,function(n){var b=n.getBoundingClientRect();return [b.left+b.width/2-sr.left,b.top+b.height/2-r.top]});
+    var d='M'+pts[0][0]+' 0 L'+pts[0][0]+' '+pts[0][1];
+    for(var i=1;i<pts.length;i++){
+      var a=pts[i-1],b=pts[i],my=(a[1]+b[1])/2,sw=mobile?0:(i%2?w*.5:-w*.5);
+      d+=' C'+(a[0]+sw)+' '+my+' '+(b[0]-sw)+' '+my+' '+b[0]+' '+b[1];
+    }
+    bg.setAttribute('d',d);fg.setAttribute('d',d);
+    return fg.getTotalLength();
+  }
+  var jlen=buildPath();
+
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!window.gsap||!window.ScrollTrigger||reduce){document.documentElement.classList.remove('anim');window.addEventListener('resize',buildPath);return;}
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* smooth scroll */
+  var lenis=null;
+  if(window.Lenis){
+    lenis=new Lenis({duration:1.15,smoothWheel:true});
+    lenis.on('scroll',ScrollTrigger.update);
+    gsap.ticker.add(function(t){lenis.raf(t*1000)});gsap.ticker.lagSmoothing(0);
+  }
+  document.querySelectorAll('[data-link]').forEach(function(a){
+    a.addEventListener('click',function(e){var h=a.getAttribute('href');if(h&&h[0]==='#'){e.preventDefault();lenis?lenis.scrollTo(h,{offset:-60}):document.querySelector(h).scrollIntoView({behavior:'smooth'})}});
+  });
+
+  /* cursor */
+  if(matchMedia('(pointer:fine)').matches){
+    var c=document.querySelector('.cursor'),dt=document.querySelector('.cursor-dot');
+    var xc=gsap.quickTo(c,'x',{duration:.45,ease:'power3'}),yc=gsap.quickTo(c,'y',{duration:.45,ease:'power3'});
+    window.addEventListener('mousemove',function(e){xc(e.clientX);yc(e.clientY);gsap.set(dt,{x:e.clientX,y:e.clientY})});
+    document.querySelectorAll('a,button,.p-card,.sk').forEach(function(el){
+      el.addEventListener('mouseenter',function(){c.classList.add('hover')});
+      el.addEventListener('mouseleave',function(){c.classList.remove('hover')});
+    });
+  }
+
+  /* loader -> hero intro */
+  gsap.set('.hero h1 .line span',{yPercent:110});
+  gsap.set('.hero-fade, nav',{opacity:0,y:20});
+  var lc={v:0},tl=gsap.timeline();
+  tl.to(lc,{v:100,duration:1.1,ease:'power2.inOut',onUpdate:function(){document.getElementById('lcount').textContent=Math.round(lc.v)}})
+    .to('#loader',{yPercent:-100,duration:.8,ease:'power4.inOut'})
+    .to('.hero h1 .line span',{yPercent:0,duration:1.1,ease:'power4.out',stagger:.12},'-=.35')
+    .to('.hero-fade, nav',{opacity:1,y:0,duration:.8,stagger:.08,ease:'power3.out'},'-=.7')
+    .set('#loader',{display:'none'});
+
+  /* hero parallax out */
+  gsap.to('.hero h1',{yPercent:-18,opacity:.25,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+
+  /* generic reveals */
+  gsap.utils.toArray('.reveal').forEach(function(el){
+    gsap.from(el,{y:60,opacity:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}});
+  });
+
+  /* counters */
+  gsap.utils.toArray('.cnt').forEach(function(el){
+    var to=parseFloat(el.dataset.to),dec=+el.dataset.dec||0,o={v:0};
+    el.textContent='0';
+    gsap.to(o,{v:to,duration:2,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 90%'},
+      onUpdate:function(){el.textContent=dec?o.v.toFixed(dec):Math.round(o.v).toLocaleString('en-US')}});
+  });
+  gsap.from('.stat',{y:40,opacity:0,stagger:.1,duration:.8,ease:'power3.out',scrollTrigger:{trigger:'.stats',start:'top 85%'}});
+
+  /* journey: line draws with scroll, nodes & cards pop in */
+  function setDash(){jlen=buildPath();fg.style.strokeDasharray=jlen;}
+  setDash();
+  gsap.fromTo(fg,{strokeDashoffset:jlen},{strokeDashoffset:0,ease:'none',
+    scrollTrigger:{trigger:'#jwrap',start:'top 65%',end:'bottom 65%',scrub:.6,invalidateOnRefresh:true,onRefreshInit:setDash}});
+  gsap.utils.toArray('.j-item').forEach(function(it){
+    var left=it.classList.contains('l')&&innerWidth>820;
+    var st={trigger:it,start:'top 75%'};
+    gsap.from(it.querySelector('.j-node'),{scale:0,duration:.6,ease:'back.out(3)',scrollTrigger:st});
+    gsap.from(it.querySelector('.j-card'),{x:innerWidth>820?(left?-80:80):0,y:innerWidth>820?0:40,opacity:0,rotate:innerWidth>820?(left?-3:3):0,duration:1,ease:'power3.out',scrollTrigger:st});
+    gsap.from(it.querySelector('.j-year'),{y:80,opacity:0,duration:1.1,ease:'power4.out',scrollTrigger:st});
+  });
+
+  /* projects: horizontal pinned scroll on desktop */
+  var mm=gsap.matchMedia();
+  mm.add('(min-width: 821px)',function(){
+    var track=document.getElementById('htrack');
+    function dist(){return track.scrollWidth-innerWidth}
+    var tw=gsap.to(track,{x:function(){return -dist()},ease:'none',
+      scrollTrigger:{trigger:'#hwrap',start:'center center',end:function(){return '+='+dist()},pin:true,scrub:.8,invalidateOnRefresh:true,anticipatePin:1}});
+    gsap.utils.toArray('.p-card').forEach(function(card){
+      gsap.from(card.querySelectorAll('.bars i'),{scaleY:0,stagger:.06,duration:.8,ease:'power3.out',
+        scrollTrigger:{trigger:card,containerAnimation:tw,start:'left 80%'}});
+      gsap.from(card.querySelectorAll('.meter i'),{scaleX:0,duration:1.2,ease:'power3.out',
+        scrollTrigger:{trigger:card,containerAnimation:tw,start:'left 80%'}});
+    });
+  });
+  mm.add('(max-width: 820px)',function(){
+    gsap.utils.toArray('.p-card').forEach(function(card){
+      gsap.from(card,{y:60,opacity:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:card,start:'top 85%'}});
+      gsap.from(card.querySelectorAll('.bars i'),{scaleY:0,stagger:.06,duration:.8,scrollTrigger:{trigger:card.querySelector('.viz'),start:'top 90%'}});
+      gsap.from(card.querySelectorAll('.meter i'),{scaleX:0,duration:1.2,scrollTrigger:{trigger:card.querySelector('.viz'),start:'top 90%'}});
+    });
+  });
+
+  /* skills + resume */
+  gsap.from('.sk',{y:50,opacity:0,stagger:.08,duration:.8,ease:'power3.out',scrollTrigger:{trigger:'.sk-grid',start:'top 85%'}});
+  gsap.fromTo('#paper',{rotate:-12,y:80,opacity:0},{rotate:-3,y:0,opacity:1,duration:1.2,ease:'power3.out',scrollTrigger:{trigger:'#resume',start:'top 75%'}});
+  gsap.from('.c-item',{y:40,opacity:0,stagger:.08,duration:.7,ease:'power3.out',scrollTrigger:{trigger:'.c-grid',start:'top 92%'}});
+
+  /* magnetic pills */
+  if(matchMedia('(pointer:fine)').matches){
+    document.querySelectorAll('.pill').forEach(function(b){
+      b.addEventListener('mousemove',function(e){var r=b.getBoundingClientRect();gsap.to(b,{x:(e.clientX-r.left-r.width/2)*.25,y:(e.clientY-r.top-r.height/2)*.35,duration:.3})});
+      b.addEventListener('mouseleave',function(){gsap.to(b,{x:0,y:0,duration:.5,ease:'elastic.out(1,.4)'})});
+    });
+  }
+
+  window.addEventListener('load',function(){ScrollTrigger.refresh()});
+  if(document.fonts)document.fonts.ready.then(function(){ScrollTrigger.refresh()});
+})();
+</script>
 </body>
 </html>
