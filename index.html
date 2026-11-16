@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yatin Ahlawat · Data Analyst</title>
+<meta name="description" content="Yatin Ahlawat — Data Analyst, Business Analyst and BI Analyst. SQL, BigQuery, Power BI and Python for retail, FMCG and e-commerce promotion analytics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f8fa;--surface:#ffffff;--text:#14171f;--muted:#5b6474;--line:#e3e6ec;
+  --accent:#2f5bea;--accent-soft:#e8eefe;--accent-2:#0f9d7a;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0d1017;--surface:#151a24;--text:#e8ebf2;--muted:#98a2b3;--line:#262d3b;
+    --accent:#7d9bff;--accent-soft:#1c2540;--accent-2:#3fd0a8;}
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:16px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;color:var(--text)}
+nav ul{list-style:none;display:flex;gap:22px;font-size:14px}
+nav ul a{color:var(--muted)}
+nav ul a:hover{color:var(--text);text-decoration:none}
+@media (max-width:640px){nav ul{display:none}}
+
+header.hero{padding:88px 0 64px}
+.eyebrow{display:inline-block;font-size:13px;font-weight:600;color:var(--accent);background:var(--accent-soft);padding:5px 12px;border-radius:999px;margin-bottom:20px}
+h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(38px,6vw,60px);line-height:1.08;letter-spacing:-.02em;margin-bottom:12px}
+.role{font-size:clamp(18px,2.4vw,22px);color:var(--muted);font-weight:500;margin-bottom:22px}
+.lede{max-width:680px;font-size:17px;color:var(--text);margin-bottom:30px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:10px;font-weight:600;font-size:15px;border:1px solid var(--line);color:var(--text);background:var(--surface)}
+.btn:hover{text-decoration:none;border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+@media (prefers-color-scheme:dark){.btn.primary{color:#0d1017}}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:56px}
+@media (max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+.stat b{display:block;font-family:'Space Grotesk',sans-serif;font-size:30px;line-height:1.1;color:var(--text)}
+.stat span{font-size:13px;color:var(--muted)}
+
+section{padding:64px 0;border-top:1px solid var(--line)}
+h2{font-family:'Space Grotesk',sans-serif;font-size:28px;letter-spacing:-.01em;margin-bottom:8px}
+.sub{color:var(--muted);margin-bottom:32px}
+
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:900px){.projects{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column}
+.tag{font-size:12px;font-weight:600;color:var(--accent-2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+.card h3{font-size:19px;line-height:1.3;margin-bottom:10px}
+.card p{color:var(--muted);font-size:15px;margin-bottom:14px}
+.card ul{padding-left:18px;font-size:14.5px;margin-bottom:16px}
+.card li{margin-bottom:6px}
+.metric{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:14px;border-top:1px dashed var(--line)}
+.metric div{font-size:13px;color:var(--muted)}
+.metric strong{display:block;font-size:20px;color:var(--text);font-family:'Space Grotesk',sans-serif}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.chip{font-size:12px;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:500}
+
+.timeline{position:relative;padding-left:26px}
+.timeline:before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.job{position:relative;margin-bottom:36px}
+.job:before{content:"";position:absolute;left:-26px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--surface);border:3px solid var(--accent)}
+.job-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;margin-bottom:6px}
+.job h3{font-size:18px}
+.job .co{color:var(--muted);font-weight:500}
+.job .when{font-size:14px;color:var(--muted);white-space:nowrap}
+.job ul{padding-left:18px;color:var(--text);font-size:15px}
+.job li{margin-bottom:6px}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.skillbox{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+.skillbox h4{font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:12px}
+
+.edu{display:flex;flex-wrap:wrap;gap:16px}
+.edu .skillbox{flex:1 1 300px}
+.edu p{color:var(--muted);font-size:15px}
+
+.contact{text-align:center}
+.contact .cta{justify-content:center;margin-top:20px}
+footer{padding:28px 0;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">Yatin Ahlawat</a>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow">New Delhi, India · Open to Data Analyst roles</span>
+    <h1>Yatin Ahlawat</h1>
+    <p class="role">Data Analyst · Business Analyst · BI Analyst</p>
+    <p class="lede">Data Analyst with 3+ years of experience across retail, e-commerce promotions, EPOS and technical audit. I turn messy retail and promotion data into KPIs, Power BI reporting and evidence for pricing, promotion and campaign decisions, using SQL, BigQuery, Power BI, Python/Pandas and Excel.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:Yatinahlawat@gmail.com">Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/yatin-ahlawat-risk007" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="#projects">See projects</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>15+</b><span>manufacturers analysed</span></div>
+      <div class="stat"><b>13,400+</b><span>promotion spots modelled</span></div>
+      <div class="stat"><b>4.4M</b><span>booked impressions analysed</span></div>
+      <div class="stat"><b>200K+</b><span>audit records reconciled</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Featured projects</h2>
+    <p class="sub">Retail and promotion intelligence work for GCC markets at ClicFlyer.</p>
+    <div class="projects">
+
+      <article class="card">
+        <div class="tag">EPOS · Promotion analytics</div>
+        <h3>EPOS &amp; Promotion Intelligence</h3>
+        <p>For a global confectionery manufacturer: combined sell-out (EPOS) and flyer-promotion data to show what promotions actually did for share.</p>
+        <ul>
+          <li>Integrated data across 15+ manufacturers and multiple retailers; modelled an 18-month fact table in a star schema.</li>
+          <li>Built a 3-page Power BI solution: Value Share, Spot Count, Share of Flyer, Depth of Promotion and monthly trends.</li>
+          <li>Flagged brands running 35–44% discount depth without matching share gains, as evidence for promotion and negotiation decisions.</li>
+        </ul>
+        <div class="metric">
+          <div><strong>40% → 46%</strong>value share observed</div>
+          <div><strong>+26%</strong>YoY promo spots</div>
+        </div>
+        <div class="chips"><span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">BigQuery</span><span class="chip">Star schema</span></div>
+      </article>
+
+      <article class="card">
+        <div class="tag">Pricing · Saudi Arabia</div>
+        <h3>Competitive Price Optimizer</h3>
+        <p>Replaced manual pre-flyer price checks with a repeatable competitor-price and planned-price simulation workflow.</p>
+        <ul>
+          <li>Consolidated ~2,200 retailer offer records across 6 competing brands.</li>
+          <li>Standardised pack sizes, brand and retailer attributes in BigQuery so prices could be compared like for like.</li>
+          <li>Built views for price index, historical offers and competitor price thresholds.</li>
+        </ul>
+        <div class="metric">
+          <div><strong>~2,200</strong>offer records</div>
+          <div><strong>6</strong>competing brands</div>
+        </div>
+        <div class="chips"><span class="chip">BigQuery</span><span class="chip">SQL</span><span class="chip">Price index</span><span class="chip">Simulation</span></div>
+      </article>
+
+      <article class="card">
+        <div class="tag">Retail media · Attribution</div>
+        <h3>Retail Media Campaign Analytics</h3>
+        <p>For Spike Media: one reporting suite for banner, click, notification and flyer-engagement data.</p>
+        <ul>
+          <li>Built a 5-report Power BI suite covering campaign delivery, pacing, CTR and attribution.</li>
+          <li>Benchmarked 16 advertisers and 4.4M booked impressions; notification campaigns delivered ~9–10% CTR.</li>
+          <li>Linked 2,423 offer clicks to 258,715 banner impressions (~0.94% click rate) to measure attribution beyond reach.</li>
+        </ul>
+        <div class="metric">
+          <div><strong>16</strong>advertisers</div>
+          <div><strong>~9–10%</strong>notification CTR</div>
+        </div>
+        <div class="chips"><span class="chip">Power BI</span><span class="chip">Power Query</span><span class="chip">Attribution</span><span class="chip">KPIs</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <p class="sub">Retail &amp; e-commerce analytics, technical audit and data quality.</p>
+    <div class="timeline">
+
+      <div class="job">
+        <div class="job-head">
+          <h3>Data Analyst 2 <span class="co">· ClicFlyer (Bodmas Technology Pvt Ltd)</span></h3>
+          <span class="when">Jul 2025 – Present · India</span>
+        </div>
+        <ul>
+          <li>Analyse FMCG and retail promotional and EPOS data across GCC markets to support pricing, promotion, market-share and campaign-performance decisions.</li>
+          <li>Turn requirements from category, trade marketing, media and product teams into KPI definitions, analytical datasets and Power BI reporting.</li>
+          <li>Standardise and transform retail datasets in BigQuery, resolving duplicate records, product-hierarchy mismatches and inconsistent brand and retailer attributes.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <h3>Associate Consultant, Technical Audit <span class="co">· Ernst &amp; Young LLP</span></h3>
+          <span class="when">Jul 2022 – Nov 2024 · India</span>
+        </div>
+        <ul>
+          <li>Analysed 200,000+ process and transaction records with SQL and Excel reconciliation checks to detect control exceptions and recurring anomalies, contributing to remediation of 15 data-integrity issues.</li>
+          <li>Used Python/Pandas to clean, transform and validate audit datasets and automate repeatable exception checks.</li>
+          <li>Built Power BI views consolidating control findings, exception trends and remediation status for stakeholders.</li>
+          <li>Partnered with Business, Finance and IT teams to turn control gaps into measurable indicators and corrective actions.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <h3>Data Analyst Intern <span class="co">· Awign Pvt Ltd</span></h3>
+          <span class="when">Dec 2018 – Jan 2019 · India</span>
+        </div>
+        <ul>
+          <li>Supported onboarding of 90–100 restaurants for Zomato by resolving integration and data-quality issues before go-live.</li>
+          <li>Cleaned and validated restaurant master data, identifying duplicate and inconsistent records.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <p class="sub">Domains: FMCG, Retail, E-commerce Promotions, EPOS / Sell-Out Analytics, Retail Media, Risk &amp; Compliance · Markets: GCC (Saudi Arabia, UAE)</p>
+    <div class="skills">
+      <div class="skillbox"><h4>Analytics</h4><div class="chips"><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Excel</span><span class="chip">KPI Analysis</span><span class="chip">Root Cause Analysis</span><span class="chip">Trend Analysis</span><span class="chip">A/B Testing</span><span class="chip">Data Validation</span></div></div>
+      <div class="skillbox"><h4>BI &amp; Visualization</h4><div class="chips"><span class="chip">Power BI</span><span class="chip">Power BI Service</span><span class="chip">DAX</span><span class="chip">Power Query</span><span class="chip">M</span><span class="chip">Power Pivot</span><span class="chip">Dashboards</span><span class="chip">Data Visualization</span></div></div>
+      <div class="skillbox"><h4>Data</h4><div class="chips"><span class="chip">Google BigQuery</span><span class="chip">SQL Server</span><span class="chip">Data Cleaning</span><span class="chip">Data Transformation</span><span class="chip">ETL</span><span class="chip">Data Modeling</span><span class="chip">Star Schema</span></div></div>
+      <div class="skillbox"><h4>Business Analysis</h4><div class="chips"><span class="chip">Requirements Gathering</span><span class="chip">KPI Definition</span><span class="chip">Stakeholder Management</span><span class="chip">Process Analysis</span><span class="chip">Business Insights</span><span class="chip">Decision Support</span></div></div>
+      <div class="skillbox"><h4>Tools</h4><div class="chips"><span class="chip">Jupyter Notebook</span><span class="chip">VS Code</span><span class="chip">Git</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <h2>Education</h2>
+    <div class="edu" style="margin-top:20px">
+      <div class="skillbox">
+        <h3 style="font-size:18px;margin-bottom:4px">B.Tech, Electrical Engineering</h3>
+        <p>Delhi Technological University, New Delhi · Aug 2018 – May 2022</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Let's talk</h2>
+    <p class="sub" style="margin-bottom:0">Looking for Data Analyst, BI Analyst or Analytics roles in Delhi NCR.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:Yatinahlawat@gmail.com">Yatinahlawat@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/yatin-ahlawat-risk007" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/yatinahlawat" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Yatin Ahlawat</footer>
+</body>
+</html>
