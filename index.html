@@ -179,8 +179,10 @@ html:not(.anim) .p-card{scroll-snap-align:start}
 .sk:hover{transform:translateY(-4px);border-color:var(--accent)}
 .sk h3{font-family:'Space Grotesk',sans-serif;font-size:20px;margin-bottom:14px;display:flex;justify-content:space-between}
 .sk h3 small{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);font-weight:400}
-.domains{margin-top:28px;color:var(--muted);font-size:15px}
-.domains b{color:var(--text)}
+.domains{max-width:520px;display:flex;flex-direction:column;gap:16px}
+.d-row small{display:block;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.d-row .chips{margin-top:8px}
+.d-row .chip{color:var(--text)}
 
 /* resume */
 .resume{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,60px);align-items:center}
@@ -379,6 +381,10 @@ html:not(.anim) .p-card{scroll-snap-align:start}
   <div class="wrap">
     <div class="sec-head">
       <div><div class="kicker">03 — Toolkit</div><h2 class="reveal">What I<br>work with</h2></div>
+      <div class="domains">
+        <div class="d-row"><small>Domains</small><div class="chips"><span class="chip">FMCG</span><span class="chip">Retail</span><span class="chip">E-commerce Promotions</span><span class="chip">EPOS / Sell-Out Analytics</span><span class="chip">Retail Media</span><span class="chip">Risk &amp; Compliance</span></div></div>
+        <div class="d-row"><small>Markets</small><div class="chips"><span class="chip">GCC</span><span class="chip">Saudi Arabia</span><span class="chip">UAE</span></div></div>
+      </div>
     </div>
     <div class="sk-grid">
       <div class="sk"><h3>Analytics <small>01</small></h3><div class="chips"><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Excel</span><span class="chip">KPI Analysis</span><span class="chip">Root Cause Analysis</span><span class="chip">Trend Analysis</span><span class="chip">A/B Testing</span><span class="chip">Data Validation</span></div></div>
@@ -387,7 +393,6 @@ html:not(.anim) .p-card{scroll-snap-align:start}
       <div class="sk"><h3>Business Analysis <small>04</small></h3><div class="chips"><span class="chip">Requirements Gathering</span><span class="chip">KPI Definition</span><span class="chip">Stakeholder Mgmt</span><span class="chip">Process Analysis</span><span class="chip">Business Insights</span><span class="chip">Decision Support</span></div></div>
       <div class="sk"><h3>Tools <small>05</small></h3><div class="chips"><span class="chip">Jupyter Notebook</span><span class="chip">VS Code</span><span class="chip">Git</span></div></div>
     </div>
-    <p class="domains"><b>Domains:</b> FMCG · Retail · E-commerce Promotions · EPOS / Sell-Out Analytics · Retail Media · Risk &amp; Compliance &nbsp;|&nbsp; <b>Markets:</b> GCC (Saudi Arabia, UAE)</p>
   </div>
 </section>
 
